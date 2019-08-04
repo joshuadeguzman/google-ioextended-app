@@ -11,6 +11,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Google IO Extended 2019 Manila',
       theme: ThemeData(
+        appBarTheme: AppBarTheme(
+          elevation: 0,
+        ),
         fontFamily: 'Manrope',
         primarySwatch: Colors.blue,
       ),
