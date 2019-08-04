@@ -18,7 +18,7 @@ class HomeScreenState extends State<HomeScreen> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text(
-          'Home',
+          'Google IO Extended',
           style: TextStyle(
             color: Colors.black54,
             fontWeight: FontWeight.bold,
