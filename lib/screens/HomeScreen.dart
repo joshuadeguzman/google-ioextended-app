@@ -2,6 +2,7 @@
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
+import 'package:dynamic_theme/dynamic_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_ioextended/shared/constants/strings.dart';
 import 'package:google_ioextended/shared/custom/app_icons_icons.dart';
@@ -17,32 +18,37 @@ class HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      // backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text(
           'Google I/O Extended',
           style: TextStyle(
-            color: Colors.black54,
+            // color: Colors.black54,
             fontWeight: FontWeight.bold,
             fontSize: 16,
           ),
         ),
-        backgroundColor: Colors.white,
+        // backgroundColor: Colors.white,
         centerTitle: true,
         actions: <Widget>[
           IconButton(
             icon: Icon(
               AppIcons.lightbulb,
               size: 20,
-              color: Colors.black54,
+              // color: Colors.black54,
             ),
-            onPressed: () {},
+            onPressed: () {
+              DynamicTheme.of(context).setBrightness(
+                  Theme.of(context).brightness == Brightness.dark
+                      ? Brightness.light
+                      : Brightness.dark);
+            },
           ),
           IconButton(
             icon: Icon(
               Icons.share,
               size: 20,
-              color: Colors.black54,
+              // color: Colors.black54,
             ),
             onPressed: () {},
           ),
@@ -98,9 +104,7 @@ class HomeScreenState extends State<HomeScreen> {
                   Expanded(
                     child: Text(
                       Strings.description_googleio_extended,
-                      style: TextStyle(
-                          fontSize: 14,
-                          color: Colors.black87),
+                      style: TextStyle(fontSize: 14, color: Colors.black87),
                     ),
                   ),
                 ],
