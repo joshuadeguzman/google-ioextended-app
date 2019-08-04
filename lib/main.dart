@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_ioextended/screens/AgendaScreen.dart';
 
 void main() => runApp(MyApp());
 
@@ -9,9 +10,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Google IO Extended 2019 Manila',
       theme: ThemeData(
+        fontFamily: 'Manrope',
         primarySwatch: Colors.blue,
       ),
-      home: ,
+      home: AgendaScreen(),
     );
   }
 }
