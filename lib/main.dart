@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_ioextended/screens/AgendaScreen.dart';
+import 'package:google_ioextended/screens/HomeScreen.dart';
 
 void main() => runApp(MyApp());
 
@@ -8,12 +8,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Google IO Extended 2019 Manila',
       theme: ThemeData(
         fontFamily: 'Manrope',
         primarySwatch: Colors.blue,
       ),
-      home: AgendaScreen(),
+      home: HomeScreen(),
     );
   }
 }
