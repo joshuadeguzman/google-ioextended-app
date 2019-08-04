@@ -4,6 +4,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_ioextended/shared/constants/strings.dart';
+import 'package:google_ioextended/shared/custom/app_icons_icons.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -30,7 +31,7 @@ class HomeScreenState extends State<HomeScreen> {
         actions: <Widget>[
           IconButton(
             icon: Icon(
-              Icons.lightbulb_outline,
+              AppIcons.lightbulb,
               size: 20,
               color: Colors.black54,
             ),

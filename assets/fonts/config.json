@@ -1,0 +1,22 @@
+{
+  "name": "AppIcons",
+  "css_prefix_text": "",
+  "css_use_suffix": false,
+  "hinting": true,
+  "units_per_em": 1000,
+  "ascent": 850,
+  "glyphs": [
+    {
+      "uid": "7f83bf676ae62ed191cee23968d6afc9",
+      "css": "fullscreen_exit",
+      "code": 59392,
+      "src": "material"
+    },
+    {
+      "uid": "599d6c088f4a1c64611b989459d65f6b",
+      "css": "lightbulb",
+      "code": 59393,
+      "src": "elusive"
+    }
+  ]
+}
