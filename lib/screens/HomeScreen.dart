@@ -24,6 +24,7 @@ class HomeScreenState extends State<HomeScreen> {
           style: TextStyle(
             color: Colors.black54,
             fontWeight: FontWeight.bold,
+            fontSize: 16,
           ),
         ),
         backgroundColor: Colors.white,
