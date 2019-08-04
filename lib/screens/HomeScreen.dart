@@ -18,7 +18,7 @@ class HomeScreenState extends State<HomeScreen> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text(
-          'Google IO Extended',
+          'Google I/O Extended',
           style: TextStyle(
             color: Colors.black54,
             fontWeight: FontWeight.bold,
@@ -55,7 +55,7 @@ class HomeScreenState extends State<HomeScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Text(
-                  'Google IO Extended 2019 Manila',
+                  'Google I/O Extended 2019 Manila',
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 20,

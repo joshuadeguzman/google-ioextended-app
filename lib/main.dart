@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Google IO Extended 2019 Manila',
+      title: 'Google I/O Extended',
       theme: ThemeData(
         appBarTheme: AppBarTheme(
           elevation: 0,
