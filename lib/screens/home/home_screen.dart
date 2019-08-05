@@ -4,6 +4,7 @@
 
 import 'package:dynamic_theme/dynamic_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:google_ioextended/screens/demo/components_screen.dart';
 import 'package:google_ioextended/shared/constants/strings.dart';
 import 'package:google_ioextended/shared/custom/app_icons_icons.dart';
 
@@ -270,7 +271,9 @@ class HomeScreenState extends State<HomeScreen> {
           ),
           Padding(padding: EdgeInsets.only(bottom: 10)),
           FlatButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => ComponentsScreen()));
+            },
             child: Text('Register', style: TextStyle(color: textColor)),
             color: colorAccent,
             shape:
