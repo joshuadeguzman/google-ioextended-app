@@ -55,63 +55,141 @@ class HomeScreenState extends State<HomeScreen> {
         ],
       ),
       body: SafeArea(
-        child: Padding(
-          padding: EdgeInsets.only(left: 15, right: 15),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
+        child: CustomScrollView(
+          slivers: <Widget>[
+            SliverList(
+              delegate: SliverChildListDelegate(
+                [
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Padding(padding: EdgeInsets.only(top: 15)),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Text(
+                            'Google I/O Extended 2019 Manila',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20,
+                                color: Colors.black87),
+                          ),
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Text(
+                            'Hosted by GDG Philippines',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 12,
+                                color: Colors.black54),
+                          ),
+                        ],
+                      ),
+                      Padding(padding: EdgeInsets.only(top: 15)),
+                      Container(
+                        width: MediaQuery.of(context).size.width,
+                        height: 300,
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            fit: BoxFit.cover,
+                            image: AssetImage(
+                                'assets/images/cover_googleio_2.png'),
+                          ),
+                        ),
+                      ),
+                      Padding(padding: EdgeInsets.only(top: 50)),
+                      Padding(
+                        padding: EdgeInsets.only(left: 15, right: 15),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Expanded(
+                              child: Text(
+                                Strings.description_googleio_extended,
+                                style: TextStyle(
+                                    fontSize: 14, color: Colors.black87),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      buildRoadShowsView()
+                    ],
+                  ),
+                ],
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget buildRoadShowsView() {
+    return Container(
+      height: 200,
+      padding: EdgeInsets.all(20),
+      child: ListView(
+        scrollDirection: Axis.horizontal,
+        children: <Widget>[
+          buildRoadShowView(Colors.blue),
+          Padding(padding: EdgeInsets.only(right: 10)),
+          buildRoadShowView(Colors.red),
+          Padding(padding: EdgeInsets.only(right: 10)),
+          buildRoadShowView(Colors.yellow)
+        ],
+      ),
+    );
+  }
+
+  Widget buildRoadShowView(Color color) {
+    return Container(
+      height: 80,
+      width: 250,
+      padding: EdgeInsets.only(top: 5, right: 10, bottom: 5, left: 10),
+      decoration: BoxDecoration(
+        color: color,
+        borderRadius: BorderRadius.all(
+          Radius.circular(10),
+        ),
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Row(
             children: <Widget>[
-              Padding(padding: EdgeInsets.only(top: 15)),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Text(
-                    'Google I/O Extended 2019 Manila',
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20,
-                        color: Colors.black87),
-                  ),
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Text(
-                    'Hosted by GDG Philippines',
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 12,
-                        color: Colors.black54),
-                  ),
-                ],
-              ),
-              Padding(padding: EdgeInsets.only(top: 15)),
-              Container(
-                width: MediaQuery.of(context).size.width,
-                height: 300,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    fit: BoxFit.cover,
-                    image: AssetImage('assets/images/cover_googleio_2.png'),
-                  ),
+              Expanded(
+                child: Text(
+                  'I/O Extended',
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 12,
+                      fontWeight: FontWeight.bold),
                 ),
-              ),
-              Padding(padding: EdgeInsets.only(top: 50)),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Expanded(
-                    child: Text(
-                      Strings.description_googleio_extended,
-                      style: TextStyle(fontSize: 14, color: Colors.black87),
-                    ),
-                  ),
-                ],
               ),
             ],
           ),
-        ),
+          Padding(padding: EdgeInsets.only(bottom: 20)),
+          Row(
+            children: <Widget>[
+              Expanded(
+                child: Text(
+                  'Live Viewing Party',
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold),
+                ),
+              ),
+            ],
+          ),
+          Padding(padding: EdgeInsets.only(bottom: 20)),
+          // TODO button
+        ],
       ),
     );
   }
