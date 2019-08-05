@@ -91,16 +91,33 @@ class HomeScreenState extends State<HomeScreen> {
                         ],
                       ),
                       Padding(padding: EdgeInsets.only(top: 15)),
-                      Container(
-                        width: MediaQuery.of(context).size.width,
-                        height: 300,
-                        decoration: BoxDecoration(
-                          image: DecorationImage(
-                            fit: BoxFit.cover,
-                            image: AssetImage(
-                                'assets/images/googleio_attendees.png'),
+                      Stack(
+                        children: <Widget>[
+                          Container(
+                            width: MediaQuery.of(context).size.width,
+                            height: 300,
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                fit: BoxFit.cover,
+                                image: AssetImage(
+                                    'assets/images/googleio_attendees.png'),
+                              ),
+                            ),
                           ),
-                        ),
+                          Positioned(
+                            left: 20,
+                            bottom: 20,
+                            child: Text(
+                              "Bringing you the I/O Experience,\none city at a time",
+                              style: TextStyle(
+                                height: 0.8,
+                                fontSize: 20,
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          )
+                        ],
                       ),
                       Padding(
                         padding: EdgeInsets.only(top: 20, left: 15, right: 15),
@@ -111,10 +128,9 @@ class HomeScreenState extends State<HomeScreen> {
                               child: Text(
                                 "Welcome!",
                                 style: TextStyle(
-                                  fontSize: 20,
-                                  color: Colors.black87,
-                                  fontWeight: FontWeight.bold
-                                ),
+                                    fontSize: 20,
+                                    color: Colors.black87,
+                                    fontWeight: FontWeight.bold),
                               ),
                             ),
                           ],
