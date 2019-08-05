@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:dynamic_theme/dynamic_theme.dart';
-import 'package:google_ioextended/screens/HomeScreen.dart';
+import 'package:google_ioextended/screens/home/home_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           title: 'Google I/O Extended',
           theme: theme,
-          home: HomeScreen(),
+          home: HomeScreen()
         );
       },
     );
