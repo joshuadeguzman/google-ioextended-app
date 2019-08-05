@@ -56,6 +56,7 @@ class HomeScreenState extends State<HomeScreen> {
       ),
       body: SafeArea(
         child: CustomScrollView(
+          physics: BouncingScrollPhysics(),
           slivers: <Widget>[
             SliverList(
               delegate: SliverChildListDelegate(
@@ -134,6 +135,7 @@ class HomeScreenState extends State<HomeScreen> {
       height: 200,
       padding: EdgeInsets.all(20),
       child: ListView(
+        physics: BouncingScrollPhysics(),
         scrollDirection: Axis.horizontal,
         children: <Widget>[
           buildRoadShowView(Colors.blue, Colors.blueAccent, Colors.white54),
