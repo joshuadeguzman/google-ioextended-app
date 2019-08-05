@@ -294,31 +294,31 @@ class HomeScreenState extends State<HomeScreen> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           Icon(
-            Icons.share,
+            AppIcons.chrome,
+            size: 20,
+            color: Colors.black54,
+          ),
+          Padding(padding: EdgeInsets.only(right: 15)),
+          Icon(
+            AppIcons.facebook,
+            size: 20,
+            color: Colors.black54,
+          ),
+          Padding(padding: EdgeInsets.only(right: 15)),
+          Icon(
+            AppIcons.twitter,
             size: 25,
             color: Colors.black54,
           ),
           Padding(padding: EdgeInsets.only(right: 15)),
           Icon(
-            Icons.share,
+            AppIcons.instagram,
             size: 25,
             color: Colors.black54,
           ),
           Padding(padding: EdgeInsets.only(right: 15)),
           Icon(
-            Icons.share,
-            size: 25,
-            color: Colors.black54,
-          ),
-          Padding(padding: EdgeInsets.only(right: 15)),
-          Icon(
-            Icons.share,
-            size: 25,
-            color: Colors.black54,
-          ),
-          Padding(padding: EdgeInsets.only(right: 15)),
-          Icon(
-            Icons.share,
+            AppIcons.meetup,
             size: 25,
             color: Colors.black54,
           ),

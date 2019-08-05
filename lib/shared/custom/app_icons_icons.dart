@@ -20,6 +20,18 @@
 ///         Author:    Aristeides Stathopoulos
 ///         License:   SIL (http://scripts.sil.org/OFL)
 ///         Homepage:  http://aristeides.com/
+/// * Zocial, Copyright (C) 2012 by Sam Collins
+///         Author:    Sam Collins
+///         License:   MIT (http://opensource.org/licenses/mit-license.php)
+///         Homepage:  http://zocial.smcllns.com/
+/// * Fontelico, Copyright (C) 2012 by Fontello project
+///         Author:    Crowdsourced, for Fontello project
+///         License:   SIL (http://scripts.sil.org/OFL)
+///         Homepage:  http://fontello.com
+/// * Font Awesome, Copyright (C) 2016 by Dave Gandy
+///         Author:    Dave Gandy
+///         License:   SIL ()
+///         Homepage:  http://fortawesome.github.com/Font-Awesome/
 ///
 import 'package:flutter/widgets.dart';
 
@@ -30,4 +42,9 @@ class AppIcons {
 
   static const IconData fullscreen_exit = const IconData(0xe800, fontFamily: _kFontFam);
   static const IconData lightbulb = const IconData(0xe801, fontFamily: _kFontFam);
+  static const IconData meetup = const IconData(0xe802, fontFamily: _kFontFam);
+  static const IconData chrome = const IconData(0xe841, fontFamily: _kFontFam);
+  static const IconData twitter = const IconData(0xf099, fontFamily: _kFontFam);
+  static const IconData facebook = const IconData(0xf09a, fontFamily: _kFontFam);
+  static const IconData instagram = const IconData(0xf16d, fontFamily: _kFontFam);
 }
