@@ -236,39 +236,35 @@ class HomeScreenState extends State<HomeScreen> {
           Padding(padding: EdgeInsets.only(bottom: 10)),
           Column(
             children: <Widget>[
-              Container(
-                height: 30,
-                child: Row(
-                  children: <Widget>[
-                    Expanded(
-                      child: Text(
-                        event,
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                        ),
+              Row(
+                children: <Widget>[
+                  Expanded(
+                    child: Text(
+                      event,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20,
+                        height: 0.75,
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
-              Container(
-                height: 20,
-                child: Row(
-                  children: <Widget>[
-                    Expanded(
-                      child: Text(
-                        location,
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 12,
-                          fontWeight: FontWeight.bold,
-                        ),
+              Row(
+                children: <Widget>[
+                  Expanded(
+                    child: Text(
+                      location,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 12,
+                        height: 0.75,
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ],
           ),
@@ -293,34 +289,49 @@ class HomeScreenState extends State<HomeScreen> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
-          Icon(
-            AppIcons.chrome,
-            size: 20,
-            color: Colors.black54,
+          InkWell(
+            onTap: () {},
+            child: Icon(
+              AppIcons.chrome,
+              size: 20,
+              color: Colors.black54,
+            ),
           ),
           Padding(padding: EdgeInsets.only(right: 15)),
-          Icon(
-            AppIcons.facebook,
-            size: 20,
-            color: Colors.black54,
+          InkWell(
+            onTap: () {},
+            child: Icon(
+              AppIcons.facebook,
+              size: 20,
+              color: Colors.black54,
+            ),
           ),
           Padding(padding: EdgeInsets.only(right: 15)),
-          Icon(
-            AppIcons.twitter,
-            size: 25,
-            color: Colors.black54,
+          InkWell(
+            onTap: () {},
+            child: Icon(
+              AppIcons.twitter,
+              size: 25,
+              color: Colors.black54,
+            ),
           ),
           Padding(padding: EdgeInsets.only(right: 15)),
-          Icon(
-            AppIcons.instagram,
-            size: 25,
-            color: Colors.black54,
+          InkWell(
+            onTap: () {},
+            child: Icon(
+              AppIcons.instagram,
+              size: 25,
+              color: Colors.black54,
+            ),
           ),
           Padding(padding: EdgeInsets.only(right: 15)),
-          Icon(
-            AppIcons.meetup,
-            size: 25,
-            color: Colors.black54,
+          InkWell(
+            onTap: () {},
+            child: Icon(
+              AppIcons.meetup,
+              size: 25,
+              color: Colors.black54,
+            ),
           ),
         ],
       ),
