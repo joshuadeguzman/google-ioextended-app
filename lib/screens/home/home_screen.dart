@@ -95,7 +95,7 @@ class HomeScreenState extends State<HomeScreen> {
                         children: <Widget>[
                           Container(
                             width: MediaQuery.of(context).size.width,
-                            height: 300,
+                            height: 230,
                             decoration: BoxDecoration(
                               image: DecorationImage(
                                 fit: BoxFit.cover,
