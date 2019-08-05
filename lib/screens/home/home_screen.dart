@@ -201,7 +201,7 @@ class HomeScreenState extends State<HomeScreen> {
           Column(
             children: <Widget>[
               Container(
-                height: 25,
+                height: 30,
                 child: Row(
                   children: <Widget>[
                     Expanded(
