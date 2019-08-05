@@ -18,24 +18,24 @@ class HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: Colors.white,
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text(
           'Google I/O Extended',
           style: TextStyle(
-            // color: Colors.black54,
+            color: Colors.black54,
             fontWeight: FontWeight.bold,
             fontSize: 16,
           ),
         ),
-        // backgroundColor: Colors.white,
+        backgroundColor: Colors.white,
         centerTitle: true,
         actions: <Widget>[
           IconButton(
             icon: Icon(
               AppIcons.lightbulb,
               size: 20,
-              // color: Colors.black54,
+              color: Colors.black54,
             ),
             onPressed: () {
               DynamicTheme.of(context).setBrightness(
@@ -48,7 +48,7 @@ class HomeScreenState extends State<HomeScreen> {
             icon: Icon(
               Icons.share,
               size: 20,
-              // color: Colors.black54,
+              color: Colors.black54,
             ),
             onPressed: () {},
           ),
