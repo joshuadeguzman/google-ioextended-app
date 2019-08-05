@@ -151,6 +151,23 @@ class HomeScreenState extends State<HomeScreen> {
                           ],
                         ),
                       ),
+                      Padding(
+                        padding: EdgeInsets.only(top: 15, left: 15, right: 15),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Expanded(
+                              child: Text(
+                                "Events",
+                                style: TextStyle(
+                                    fontSize: 20,
+                                    color: Colors.black87,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
                       buildRoadShowsView()
                     ],
                   ),
@@ -165,8 +182,9 @@ class HomeScreenState extends State<HomeScreen> {
 
   Widget buildRoadShowsView() {
     return Container(
-      height: 200,
-      padding: EdgeInsets.all(20),
+      height: 150,
+      padding: EdgeInsets.only(left: 15, right: 15),
+      margin: EdgeInsets.only(bottom: 20),
       child: ListView(
         physics: BouncingScrollPhysics(),
         scrollDirection: Axis.horizontal,
