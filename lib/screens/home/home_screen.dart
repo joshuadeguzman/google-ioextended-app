@@ -138,19 +138,23 @@ class HomeScreenState extends State<HomeScreen> {
         physics: BouncingScrollPhysics(),
         scrollDirection: Axis.horizontal,
         children: <Widget>[
-          buildRoadShowView(Colors.blue, Colors.blueAccent, Colors.white54),
+          buildRoadShowView(Colors.blue, Colors.blueAccent, Colors.white54,
+              "Live Viewing Party", "Google PH, BGC"),
           Padding(padding: EdgeInsets.only(right: 10)),
-          buildRoadShowView(Colors.red, Colors.redAccent, Colors.white54),
+          buildRoadShowView(Colors.red, Colors.redAccent, Colors.white54,
+              "Manila", "Globe Tower, BGC"),
           Padding(padding: EdgeInsets.only(right: 10)),
-          buildRoadShowView(Colors.orange, Colors.orangeAccent, Colors.white54)
+          buildRoadShowView(Colors.orange, Colors.orangeAccent, Colors.white54,
+              "Pampanga", "TBA")
         ],
       ),
     );
   }
 
-  Widget buildRoadShowView(Color color, Color colorAccent, Color textColor) {
+  Widget buildRoadShowView(Color color, Color colorAccent, Color textColor,
+      String event, String location) {
     return Container(
-      height: 80,
+      height: 200,
       width: 250,
       padding: EdgeInsets.only(top: 5, right: 10, bottom: 5, left: 10),
       decoration: BoxDecoration(
@@ -161,6 +165,7 @@ class HomeScreenState extends State<HomeScreen> {
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Row(
             children: <Widget>[
@@ -175,27 +180,52 @@ class HomeScreenState extends State<HomeScreen> {
               ),
             ],
           ),
-          Padding(padding: EdgeInsets.only(bottom: 20)),
-          Row(
+          Padding(padding: EdgeInsets.only(bottom: 10)),
+          Column(
             children: <Widget>[
-              Expanded(
-                child: Text(
-                  'Live Viewing Party',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold),
+              Container(
+                height: 25,
+                child: Row(
+                  children: <Widget>[
+                    Expanded(
+                      child: Text(
+                        event,
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                height: 20,
+                child: Row(
+                  children: <Widget>[
+                    Expanded(
+                      child: Text(
+                        location,
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 12,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ],
           ),
-          Padding(padding: EdgeInsets.only(bottom: 20)),
-          // TODO button
+          Padding(padding: EdgeInsets.only(bottom: 10)),
           FlatButton(
             onPressed: () {},
             child: Text('Register', style: TextStyle(color: textColor)),
             color: colorAccent,
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
           )
         ],
       ),
