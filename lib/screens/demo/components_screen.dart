@@ -15,13 +15,15 @@ class ComponentsScreen extends StatefulWidget {
 }
 
 class ComponentsScreenState extends State<ComponentsScreen> {
-  bool isMaterialDesign = true;
+  bool _isMaterialDesign = true;
+  
+  // Components
+  double _sliderValue = 0.0;
+  bool _isSwitchToggled = false;
 
   @override
   Widget build(BuildContext context) {
-    return this.isMaterialDesign
-        ? buildMaterialWidgets()
-        : buildCupertinoWidgets();
+    return _isMaterialDesign ? buildMaterialWidgets() : buildCupertinoWidgets();
   }
 
   Widget buildMaterialWidgets() {
@@ -53,7 +55,7 @@ class ComponentsScreenState extends State<ComponentsScreen> {
               onPressed: () {
                 setState(
                   () {
-                    this.isMaterialDesign = !this.isMaterialDesign;
+                    _isMaterialDesign = !_isMaterialDesign;
                   },
                 );
               },
@@ -78,11 +80,40 @@ class ComponentsScreenState extends State<ComponentsScreen> {
                 Center(
                   child: SizedBox(
                     height: 70,
-                    width: 200,
                     child: CupertinoButton(
                       onPressed: () {},
                       color: Colors.blue,
-                      child: Text('iOS', style: TextStyle(fontSize: 20)),
+                      child: Text('iOS ♥ Flutter', style: TextStyle(fontSize: 20)),
+                    ),
+                  ),
+                ),
+                Padding(padding: EdgeInsets.only(top: 50)),
+                Center(
+                  child: SizedBox(
+                    height: 70,
+                    width: 200,
+                    child: CupertinoSlider(
+                      onChanged: (double value) {
+                        setState(() {
+                          _sliderValue = value;
+                        });
+                      },
+                      value: _sliderValue,
+                      min: 0.0,
+                      max: 100.0,
+                    ),
+                  ),
+                ),
+                Padding(padding: EdgeInsets.only(top: 30)),
+                Center(
+                  child: SizedBox(
+                    height: 70,
+                    width: 200,
+                    child: CupertinoSwitch(
+                      value: _isSwitchToggled,
+                      onChanged: (bool value) {
+                        _isSwitchToggled = value;
+                      },
                     ),
                   ),
                 ),
@@ -93,7 +124,7 @@ class ComponentsScreenState extends State<ComponentsScreen> {
               onPressed: () {
                 setState(
                   () {
-                    this.isMaterialDesign = !this.isMaterialDesign;
+                    _isMaterialDesign = !_isMaterialDesign;
                   },
                 );
               },
