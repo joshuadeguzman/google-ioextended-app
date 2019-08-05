@@ -93,9 +93,9 @@ class ComponentsScreenState extends State<ComponentsScreen> {
                     height: 70,
                     width: 200,
                     child: CupertinoSlider(
-                      onChanged: (double value) {
+                      onChanged: (double sliderValue) {
                         setState(() {
-                          _sliderValue = value;
+                          _sliderValue = sliderValue;
                         });
                       },
                       value: _sliderValue,
@@ -111,8 +111,8 @@ class ComponentsScreenState extends State<ComponentsScreen> {
                     width: 200,
                     child: CupertinoSwitch(
                       value: _isSwitchToggled,
-                      onChanged: (bool value) {
-                        _isSwitchToggled = value;
+                      onChanged: (bool switchValue) {
+                        _isSwitchToggled = !switchValue;
                       },
                     ),
                   ),
