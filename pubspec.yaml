@@ -45,6 +45,7 @@ flutter:
   assets:
    - assets/images/cover_googleio.png
    - assets/images/cover_googleio_2.png
+   - assets/images/googleio_attendees.png
   #  - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

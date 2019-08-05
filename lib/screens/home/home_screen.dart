@@ -98,11 +98,28 @@ class HomeScreenState extends State<HomeScreen> {
                           image: DecorationImage(
                             fit: BoxFit.cover,
                             image: AssetImage(
-                                'assets/images/cover_googleio_2.png'),
+                                'assets/images/googleio_attendees.png'),
                           ),
                         ),
                       ),
-                      Padding(padding: EdgeInsets.only(top: 50)),
+                      Padding(
+                        padding: EdgeInsets.only(top: 20, left: 15, right: 15),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Expanded(
+                              child: Text(
+                                "Welcome!",
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: Colors.black87,
+                                  fontWeight: FontWeight.bold
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
                       Padding(
                         padding: EdgeInsets.only(left: 15, right: 15),
                         child: Row(
