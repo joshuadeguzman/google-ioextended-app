@@ -136,17 +136,17 @@ class HomeScreenState extends State<HomeScreen> {
       child: ListView(
         scrollDirection: Axis.horizontal,
         children: <Widget>[
-          buildRoadShowView(Colors.blue),
+          buildRoadShowView(Colors.blue, Colors.blueAccent, Colors.white54),
           Padding(padding: EdgeInsets.only(right: 10)),
-          buildRoadShowView(Colors.red),
+          buildRoadShowView(Colors.red, Colors.redAccent, Colors.white54),
           Padding(padding: EdgeInsets.only(right: 10)),
-          buildRoadShowView(Colors.yellow)
+          buildRoadShowView(Colors.orange, Colors.orangeAccent, Colors.white54)
         ],
       ),
     );
   }
 
-  Widget buildRoadShowView(Color color) {
+  Widget buildRoadShowView(Color color, Color colorAccent, Color textColor) {
     return Container(
       height: 80,
       width: 250,
@@ -189,6 +189,12 @@ class HomeScreenState extends State<HomeScreen> {
           ),
           Padding(padding: EdgeInsets.only(bottom: 20)),
           // TODO button
+          FlatButton(
+            onPressed: () {},
+            child: Text('Register', style: TextStyle(color: textColor)),
+            color: colorAccent,
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+          )
         ],
       ),
     );
