@@ -168,7 +168,9 @@ class HomeScreenState extends State<HomeScreen> {
                           ],
                         ),
                       ),
-                      buildRoadShowsView()
+                      buildRoadShowsView(),
+                      buildSocialMediaView(),
+                      buildVersionView()
                     ],
                   ),
                 ],
@@ -277,6 +279,68 @@ class HomeScreenState extends State<HomeScreen> {
             color: colorAccent,
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+          )
+        ],
+      ),
+    );
+  }
+
+  Widget buildSocialMediaView() {
+    return Container(
+      height: 50,
+      padding: EdgeInsets.only(bottom: 20),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          Icon(
+            Icons.share,
+            size: 25,
+            color: Colors.black54,
+          ),
+          Padding(padding: EdgeInsets.only(right: 15)),
+          Icon(
+            Icons.share,
+            size: 25,
+            color: Colors.black54,
+          ),
+          Padding(padding: EdgeInsets.only(right: 15)),
+          Icon(
+            Icons.share,
+            size: 25,
+            color: Colors.black54,
+          ),
+          Padding(padding: EdgeInsets.only(right: 15)),
+          Icon(
+            Icons.share,
+            size: 25,
+            color: Colors.black54,
+          ),
+          Padding(padding: EdgeInsets.only(right: 15)),
+          Icon(
+            Icons.share,
+            size: 25,
+            color: Colors.black54,
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget buildVersionView() {
+    return Container(
+      height: 50,
+      padding: EdgeInsets.only(bottom: 20),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          Expanded(
+            child: Text(
+              'Version 1.0.0',
+              style: TextStyle(fontSize: 10, color: Colors.black54),
+              textAlign: TextAlign.center,
+            ),
           )
         ],
       ),
