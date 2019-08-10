@@ -2,7 +2,6 @@
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
-import 'package:dynamic_theme/dynamic_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_ioextended/shared/constants/strings.dart';
 import 'package:google_ioextended/shared/custom/app_icons_icons.dart';
@@ -41,10 +40,7 @@ class HomeScreenState extends State<HomeScreen> {
               color: Colors.black54,
             ),
             onPressed: () {
-              DynamicTheme.of(context).setBrightness(
-                  Theme.of(context).brightness == Brightness.dark
-                      ? Brightness.light
-                      : Brightness.dark);
+              // TODO
             },
           ),
           IconButton(
