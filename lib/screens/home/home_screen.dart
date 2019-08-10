@@ -42,10 +42,10 @@ class HomeScreenState extends State<HomeScreen> {
             ),
             onPressed: () {
               setState(() {
-                if (_padValue == 25) {
+                if (_padValue == 30) {
                   _padValue = 0;
                 } else {
-                  _padValue = 25;
+                  _padValue = 30;
                 }
               });
             },
