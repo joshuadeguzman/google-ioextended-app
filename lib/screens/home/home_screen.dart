@@ -4,9 +4,11 @@
 
 import 'package:dynamic_theme/dynamic_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:google_ioextended/screens/demo/components_screen.dart';
 import 'package:google_ioextended/shared/constants/strings.dart';
 import 'package:google_ioextended/shared/custom/app_icons_icons.dart';
+import 'package:google_ioextended/widgets/roadshows_view.dart';
+import 'package:google_ioextended/widgets/social_view.dart';
+import 'package:google_ioextended/widgets/version_view.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -120,56 +122,10 @@ class HomeScreenState extends State<HomeScreen> {
                           )
                         ],
                       ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 20, left: 15, right: 15),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            Expanded(
-                              child: Text(
-                                "Welcome!",
-                                style: TextStyle(
-                                    fontSize: 20,
-                                    color: Colors.black87,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(left: 15, right: 15),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            Expanded(
-                              child: Text(
-                                Strings.description_googleio_extended,
-                                style: TextStyle(
-                                    fontSize: 14, color: Colors.black87),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 15, left: 15, right: 15),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            Expanded(
-                              child: Text(
-                                "Events",
-                                style: TextStyle(
-                                    fontSize: 20,
-                                    color: Colors.black87,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      buildRoadShowsView(),
+                      buildDescriptionLabelView(),
+                      buildDescriptionView(),
+                      buildEventsLabelView(),
+                      buildRoadShowsView(context),
                       buildSocialMediaView(),
                       buildVersionView()
                     ],
@@ -183,179 +139,58 @@ class HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Widget buildRoadShowsView() {
-    return Container(
-      height: 150,
-      padding: EdgeInsets.only(left: 15, right: 15),
-      margin: EdgeInsets.only(bottom: 20),
-      child: ListView(
-        physics: BouncingScrollPhysics(),
-        scrollDirection: Axis.horizontal,
-        children: <Widget>[
-          buildRoadShowView(Colors.blue, Colors.blueAccent, Colors.white54,
-              "Live Viewing Party", "Google PH, BGC"),
-          Padding(padding: EdgeInsets.only(right: 10)),
-          buildRoadShowView(Colors.red, Colors.redAccent, Colors.white54,
-              "Manila", "Globe Tower, BGC"),
-          Padding(padding: EdgeInsets.only(right: 10)),
-          buildRoadShowView(Colors.orange, Colors.orangeAccent, Colors.white54,
-              "Pampanga", "TBA")
-        ],
-      ),
-    );
-  }
-
-  Widget buildRoadShowView(Color color, Color colorAccent, Color textColor,
-      String event, String location) {
-    return Container(
-      height: 200,
-      width: 250,
-      padding: EdgeInsets.only(top: 5, right: 10, bottom: 5, left: 10),
-      decoration: BoxDecoration(
-        color: color,
-        borderRadius: BorderRadius.all(
-          Radius.circular(10),
-        ),
-      ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Row(
-            children: <Widget>[
-              Expanded(
-                child: Text(
-                  'I/O Extended',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 12,
-                      fontWeight: FontWeight.bold),
-                ),
-              ),
-            ],
-          ),
-          Padding(padding: EdgeInsets.only(bottom: 10)),
-          Column(
-            children: <Widget>[
-              Row(
-                children: <Widget>[
-                  Expanded(
-                    child: Text(
-                      event,
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 20,
-                        height: 0.75,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              Row(
-                children: <Widget>[
-                  Expanded(
-                    child: Text(
-                      location,
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 12,
-                        height: 0.75,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ],
-          ),
-          Padding(padding: EdgeInsets.only(bottom: 10)),
-          FlatButton(
-            onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => ComponentsScreen()));
-            },
-            child: Text('Register', style: TextStyle(color: textColor)),
-            color: colorAccent,
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-          )
-        ],
-      ),
-    );
-  }
-
-  Widget buildSocialMediaView() {
-    return Container(
-      height: 50,
-      padding: EdgeInsets.only(bottom: 20),
+  Widget buildDescriptionLabelView() {
+    return Padding(
+      padding: EdgeInsets.only(top: 20, left: 15, right: 15),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: <Widget>[
-          InkWell(
-            onTap: () {},
-            child: Icon(
-              AppIcons.chrome,
-              size: 20,
-              color: Colors.black54,
-            ),
-          ),
-          Padding(padding: EdgeInsets.only(right: 15)),
-          InkWell(
-            onTap: () {},
-            child: Icon(
-              AppIcons.facebook,
-              size: 20,
-              color: Colors.black54,
-            ),
-          ),
-          Padding(padding: EdgeInsets.only(right: 15)),
-          InkWell(
-            onTap: () {},
-            child: Icon(
-              AppIcons.twitter,
-              size: 25,
-              color: Colors.black54,
-            ),
-          ),
-          Padding(padding: EdgeInsets.only(right: 15)),
-          InkWell(
-            onTap: () {},
-            child: Icon(
-              AppIcons.instagram,
-              size: 25,
-              color: Colors.black54,
-            ),
-          ),
-          Padding(padding: EdgeInsets.only(right: 15)),
-          InkWell(
-            onTap: () {},
-            child: Icon(
-              AppIcons.meetup,
-              size: 25,
-              color: Colors.black54,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget buildVersionView() {
-    return Container(
-      height: 50,
-      padding: EdgeInsets.only(bottom: 20),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           Expanded(
             child: Text(
-              'Version 1.0.0',
-              style: TextStyle(fontSize: 10, color: Colors.black54),
-              textAlign: TextAlign.center,
+              "Welcome!",
+              style: TextStyle(
+                  fontSize: 20,
+                  color: Colors.black87,
+                  fontWeight: FontWeight.bold),
             ),
-          )
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget buildDescriptionView() {
+    return Padding(
+      padding: EdgeInsets.only(left: 15, right: 15),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Expanded(
+            child: Text(
+              Strings.description_googleio_extended,
+              style: TextStyle(fontSize: 14, color: Colors.black87),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget buildEventsLabelView() {
+    return Padding(
+      padding: EdgeInsets.only(top: 15, left: 15, right: 15),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Expanded(
+            child: Text(
+              "Events",
+              style: TextStyle(
+                  fontSize: 20,
+                  color: Colors.black87,
+                  fontWeight: FontWeight.bold),
+            ),
+          ),
         ],
       ),
     );
