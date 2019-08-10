@@ -4,7 +4,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_ioextended/shared/constants/strings.dart';
-import 'package:google_ioextended/shared/custom/app_icons_icons.dart';
 import 'package:google_ioextended/widgets/roadshows_view.dart';
 import 'package:google_ioextended/widgets/social_view.dart';
 import 'package:google_ioextended/widgets/version_view.dart';
@@ -17,6 +16,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class HomeScreenState extends State<HomeScreen> {
+  double _padValue = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -36,12 +36,18 @@ class HomeScreenState extends State<HomeScreen> {
         actions: <Widget>[
           IconButton(
             icon: Icon(
-              AppIcons.lightbulb,
+              Icons.image,
               size: 20,
               color: Colors.black54,
             ),
             onPressed: () {
-              //
+              setState(() {
+                if (_padValue == 25) {
+                  _padValue = 0;
+                } else {
+                  _padValue = 25;
+                }
+              });
             },
           ),
           IconButton(
@@ -93,16 +99,21 @@ class HomeScreenState extends State<HomeScreen> {
                       Padding(padding: EdgeInsets.only(top: 15)),
                       Stack(
                         children: <Widget>[
-                          Container(
-                            width: MediaQuery.of(context).size.width,
-                            height: 230,
-                            decoration: BoxDecoration(
-                              image: DecorationImage(
-                                fit: BoxFit.cover,
-                                image: AssetImage(
-                                    'assets/images/googleio_attendees.png'),
+                          AnimatedPadding(
+                            curve: Curves.easeInOut,
+                            child: Container(
+                              width: MediaQuery.of(context).size.width,
+                              height: 230,
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                  fit: BoxFit.cover,
+                                  image: AssetImage(
+                                      'assets/images/googleio_attendees.png'),
+                                ),
                               ),
                             ),
+                            padding: EdgeInsets.all(_padValue),
+                            duration: const Duration(seconds: 1),
                           ),
                           Positioned(
                             left: 20,
