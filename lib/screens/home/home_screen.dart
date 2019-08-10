@@ -17,6 +17,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class HomeScreenState extends State<HomeScreen> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,8 +41,7 @@ class HomeScreenState extends State<HomeScreen> {
               color: Colors.black54,
             ),
             onPressed: () {
-              final snackBar = SnackBar(content: Text('Yay! You opened a snackbar!'));
-              Scaffold.of(context).showSnackBar(snackBar);
+              //
             },
           ),
           IconButton(
@@ -134,6 +134,11 @@ class HomeScreenState extends State<HomeScreen> {
         ),
       ),
     );
+  }
+
+  void showSnackbar(String message) {
+    final snackBar = SnackBar(content: Text(message));
+    Scaffold.of(context).showSnackBar(snackBar);
   }
 
   Widget buildDescriptionLabelView() {
