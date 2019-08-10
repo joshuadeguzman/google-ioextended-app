@@ -119,9 +119,9 @@ class HomeScreenState extends State<HomeScreen> {
                           )
                         ],
                       ),
-                      buildDescriptionLabelView(),
-                      buildDescriptionView(),
-                      buildEventsLabelView(),
+                      _buildDescriptionLabelView(),
+                      _buildDescriptionView(),
+                      _buildEventsLabelView(),
                       buildRoadShowsView(context),
                       buildSocialMediaView(),
                       buildVersionView()
@@ -141,7 +141,7 @@ class HomeScreenState extends State<HomeScreen> {
     Scaffold.of(context).showSnackBar(snackBar);
   }
 
-  Widget buildDescriptionLabelView() {
+  Widget _buildDescriptionLabelView() {
     return Padding(
       padding: EdgeInsets.only(top: 20, left: 15, right: 15),
       child: Row(
@@ -161,7 +161,7 @@ class HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Widget buildDescriptionView() {
+  Widget _buildDescriptionView() {
     return Padding(
       padding: EdgeInsets.only(left: 15, right: 15),
       child: Row(
@@ -178,7 +178,7 @@ class HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Widget buildEventsLabelView() {
+  Widget _buildEventsLabelView() {
     return Padding(
       padding: EdgeInsets.only(top: 15, left: 15, right: 15),
       child: Row(

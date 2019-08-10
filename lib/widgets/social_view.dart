@@ -16,7 +16,7 @@ Widget buildSocialMediaView() {
       children: <Widget>[
         InkWell(
           onTap: () {
-            launchWebsite("https://gdgph.org");
+            _launchWebsite("https://gdgph.org");
           },
           child: Icon(
             AppIcons.chrome,
@@ -65,7 +65,7 @@ Widget buildSocialMediaView() {
   );
 }
 
-void launchWebsite(String url) async {
+void _launchWebsite(String url) async {
   if (await canLaunch(url)) {
     await launch(url);
   } else {
