@@ -40,7 +40,8 @@ class HomeScreenState extends State<HomeScreen> {
               color: Colors.black54,
             ),
             onPressed: () {
-              // TODO
+              final snackBar = SnackBar(content: Text('Yay! You opened a snackbar!'));
+              Scaffold.of(context).showSnackBar(snackBar);
             },
           ),
           IconButton(
